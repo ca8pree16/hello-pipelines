@@ -12,13 +12,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 #Pipeline will run specifically inside this container
-container: mcr.microsoft.com/dotnet/core/sdk:5.0
+#container: mcr.microsoft.com/dotnet/core/sdk:5.0
 
 #what are the actual actions you want to e
 steps:
-- task: DotNetCoreCLI@2
-  inputs: 
-    command: build
 
 - task: DotNetCoreCLI@2
   inputs:
