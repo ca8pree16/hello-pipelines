@@ -3,14 +3,18 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+#defines when this pipeline is going to get kicked out. Whenever something is pushed to master. This is a CI based trigger. You can do pull request based or schedule it based on a time
 trigger:
 - master
 
+#this one is an MS hosted machine. 
 pool:
   vmImage: 'ubuntu-latest'
 
-container: mcr.microsoft.com/dotnet/core/sdk:3.0
+#Pipeline will run specifically inside this container
+container: mcr.microsoft.com/dotnet/core/sdk:5.0
 
+#what are the actual actions you want to e
 steps:
 - task: DotNetCoreCLI@2
   inputs: 
